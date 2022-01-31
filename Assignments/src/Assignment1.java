@@ -26,11 +26,11 @@ public class Assignment1 {
 		/*---------------------------------------------------------------------
 		 * Write a Java program to print the area and perimeter of a circle.
 		---------------------------------------------------------------------*/
-		final double pi = 3.14;
+		final double PI = 3.14;
 		double radius = 10;
 		double areaOfCircle, perimeterOfCircle;
-		areaOfCircle = pi*radius*radius;
-		perimeterOfCircle = 2*pi*radius;
+		areaOfCircle = PI*radius*radius;
+		perimeterOfCircle = 2*PI*radius;
 		System.out.println("Area of Circle with radius="+radius+" is : " + areaOfCircle);
 		System.out.println("Perimeter of Circle with radius="+radius+" is : " + perimeterOfCircle);
 		/*---------------------------------------------------------------------
