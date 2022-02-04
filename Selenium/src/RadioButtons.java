@@ -16,7 +16,7 @@ public class RadioButtons {
 		WebElement yesRadio = driver.findElement(By.xpath("//input[@id='yesRadio']/following-sibling::label"));
 		WebElement impresiveRadio = driver.findElement(By.xpath("//input[@id='impressiveRadio']/following-sibling::label"));
 		WebElement noRadio = driver.findElement(By.xpath("//input[@id='noRadio']/following-sibling::label"));
-		if (yesRadio.isEnabled()) {
+		if (!yesRadio.getAttribute("class").contains("disabled")) {
 			yesRadio.click();
 			System.out.println(driver.findElement(By.cssSelector("p.mt-3")).getText());
 			Thread.sleep(1000);
@@ -25,17 +25,19 @@ public class RadioButtons {
 		} else
 			System.out.println("yesRadio Not Active");
 
-		if (impresiveRadio.isEnabled()) {
+		if (!impresiveRadio.getAttribute("class").contains("disabled")) {
 			impresiveRadio.click();
 			System.out.println(driver.findElement(By.cssSelector("p.mt-3")).getText());
 			Thread.sleep(1000);
 		} else
 			System.out.println("impresiveRadio Not Active");
-
-		if (noRadio.isEnabled())
+		
+//		System.out.println(noRadio.getAttribute("class").contains("disabled"));
+		
+		if (!noRadio.getAttribute("class").contains("disabled"))
 			noRadio.click();
 		else
-			System.out.println("noRadio Not Active");
+			System.out.println("noRadio Button Not Active");
 
 	}
 
