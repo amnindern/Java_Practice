@@ -1,5 +1,5 @@
 import java.util.List;
-import java.util.Objects;
+//import java.util.Objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,33 +11,38 @@ public class CheckBox {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String toClick = "WorkSpace";
+		String toClick = "Excel";
 		System.setProperty("webdriver.chrome.driver", "D:\\Testing\\chromedriver.exe");
 		List<WebElement> nameOutput;
 		List<WebElement> buttonOutput;
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demoqa.com/checkbox");
 		System.out.println(driver.getTitle());
-
-		int numberOfButtons, numberOfText = 0, clickOfButtons = 0;
+		boolean doneOrNo = false;
+		int numberOfButtons, numberOfText, clickOfButtons = 0;
 		buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
 		numberOfButtons = buttonOutput.size();
 		nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
 		numberOfText = nameOutput.size();
-		for (int i = 0; i < numberOfButtons; i++) {
+		for (int i = 0; i <= numberOfButtons; i++) {
 
 			for (WebElement name : nameOutput) {
 				if (name.getText().contains(toClick)) {
 					name.click();
+					doneOrNo = true;
 					break;
+					
 				}
 			}
+			if(doneOrNo)
+				break;
 			buttonOutput.get(i).click();
 //			clickOfButton.click();
 			buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
 			numberOfButtons = buttonOutput.size();
 			nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
 			numberOfText = nameOutput.size();
+			
 
 		}
 
