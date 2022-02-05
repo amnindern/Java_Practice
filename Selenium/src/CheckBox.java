@@ -11,7 +11,7 @@ public class CheckBox {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String toClick = "Excel";
+		String toClick = "Word";
 		System.setProperty("webdriver.chrome.driver", "D:\\Testing\\chromedriver.exe");
 		List<WebElement> nameOutput;
 		List<WebElement> buttonOutput;
@@ -19,11 +19,10 @@ public class CheckBox {
 		driver.get("https://demoqa.com/checkbox");
 		System.out.println(driver.getTitle());
 		boolean doneOrNo = false;
-		int numberOfButtons, numberOfText, clickOfButtons = 0;
+		int numberOfButtons;
 		buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
 		numberOfButtons = buttonOutput.size();
 		nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
-		numberOfText = nameOutput.size();
 		for (int i = 0; i <= numberOfButtons; i++) {
 
 			for (WebElement name : nameOutput) {
@@ -41,7 +40,6 @@ public class CheckBox {
 			buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
 			numberOfButtons = buttonOutput.size();
 			nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
-			numberOfText = nameOutput.size();
 			
 
 		}
