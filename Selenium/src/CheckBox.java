@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 //import java.util.Objects;
 
@@ -11,7 +13,7 @@ public class CheckBox {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String toClick = "Word";
+		List <String> toClick = new ArrayList<>(Arrays.asList( "Word", "Excel","Ammi","Notes" )); 
 		System.setProperty("webdriver.chrome.driver", "D:\\Testing\\chromedriver.exe");
 		List<WebElement> nameOutput;
 		List<WebElement> buttonOutput;
@@ -26,29 +28,27 @@ public class CheckBox {
 		for (int i = 0; i <= numberOfButtons; i++) {
 
 			for (WebElement name : nameOutput) {
-				if (name.getText().contains(toClick)) {
-					name.click();
-					doneOrNo = true;
-					break;
-					
+				for (int j = 0; j < toClick.size(); j++) {
+					if (name.getText().contains(toClick.get(j))) {
+						name.click();
+						toClick.remove(j);
+						if (toClick.isEmpty()) {
+							doneOrNo = true;
+							break;
+						}
+
+					}
 				}
+				if (doneOrNo)
+					break;
 			}
-			if(doneOrNo)
+			if (doneOrNo || i == numberOfButtons)
 				break;
 			buttonOutput.get(i).click();
-//			clickOfButton.click();
 			buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
 			numberOfButtons = buttonOutput.size();
 			nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
-			
 
 		}
-
-//
-//			driver.findElement(By.xpath("//span[text()='Home']")).click();
-//			driver.findElements(By.xpath("//span[@class='rct-text']/button"));
-//
-//			outputArray = output.toArray();
-//			System.out.println(outputArray[2]);
 	}
 }
