@@ -13,18 +13,15 @@ public class CheckBox {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		List <String> toClick = new ArrayList<>(Arrays.asList( "Word", "Excel","Ammi","Notes" )); 
+		List <String> toClick = new ArrayList<>(Arrays.asList( "Word", "Excel","Notes")); 
 		System.setProperty("webdriver.chrome.driver", "D:\\Testing\\chromedriver.exe");
-		List<WebElement> nameOutput;
-		List<WebElement> buttonOutput;
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demoqa.com/checkbox");
 		System.out.println(driver.getTitle());
 		boolean doneOrNo = false;
-		int numberOfButtons;
-		buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
-		numberOfButtons = buttonOutput.size();
-		nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
+		List<WebElement> buttonOutput = driver.findElements(By.xpath("//span[@class='rct-text']/button"));
+		int numberOfButtons = buttonOutput.size();
+		List<WebElement> nameOutput = driver.findElements(By.xpath("//span[@class='rct-title']"));
 		for (int i = 0; i <= numberOfButtons; i++) {
 
 			for (WebElement name : nameOutput) {
