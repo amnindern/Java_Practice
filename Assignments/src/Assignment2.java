@@ -84,23 +84,21 @@ public class Assignment2 {
 				System.out.println("Positive Odd");
 		} else
 			System.out.println("Even");
-		
+
 		System.out.println("----------------------------------------Q6----------------------------------");
 		/*---------------------------------------------------------------------
 		 * Write a Java program that has two number variables and divide the first number by second number. 
 		 * If the division not possible print "Division not possible".
 		---------------------------------------------------------------------*/
-		
+
 		System.out.print("X= ");
 		int x = sc.nextInt();
 		System.out.print("Y= ");
 		int y = sc.nextInt();
-		if(x>y) {
-			System.out.println(x/y);
-		}
-		else
+		if (x > y) {
+			System.out.println(x / y);
+		} else
 			System.out.println("Division not possible");
-		
 
 		System.out.println("----------------------------------------Q7----------------------------------");
 		/*---------------------------------------------------------------------
