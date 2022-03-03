@@ -11,9 +11,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class CheckBox {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		List <String> toClick = new ArrayList<>(Arrays.asList( "Word", "Excel","Notes")); 
+		List <String> toClick = new ArrayList<>(Arrays.asList( "Word", "Excel","Notes","Ammi")); 
 		System.setProperty("webdriver.chrome.driver", "D:\\Testing\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demoqa.com/checkbox");
